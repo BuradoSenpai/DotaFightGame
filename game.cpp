@@ -172,6 +172,16 @@ void Game::playMenu()
         bool _new_try = true;
         while(_new_try)
         {
+            /*  Pointers are common in both vectors.
+             *  It may do so, there could be problem.
+             *  "Hero" and "Enemy" can take same object (pointer).
+             *  If it happens, the object will be out of control.
+             *
+             *  This code checks if they are same object.
+             *  If it is, "Enemy" will take other pointer.
+             *  Else game will start without this problem.
+             *  Thank you for attention! :)
+             */
             int enemy_rand = rand()%this->allHeroes.size();
             enemy = this->allHeroes[enemy_rand];
 

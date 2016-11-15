@@ -22,6 +22,16 @@ void Game::printMenu()
     bool _try = true;
 
     while (_try)
+
+
+
+
+
+
+
+
+
+
     {
         cout << "Select: ";
         char selection;
@@ -127,8 +137,10 @@ void Game::playMenu()
     srand(time(NULL));
 
     bool _try = true;
+
     Hero *hero;
     Hero *enemy;
+
     while (_try)
     {
         for (int i(0); i < this->heroes.size(); i++)
@@ -157,8 +169,17 @@ void Game::playMenu()
         else
             hero = this->heroes[selection-1];
 
-        int enemy_rand = rand()%this->allHeroes.size();
-        enemy = this->allHeroes[enemy_rand];
+        bool _new_try = true;
+        while(_new_try)
+        {
+            int enemy_rand = rand()%this->allHeroes.size();
+            enemy = this->allHeroes[enemy_rand];
+
+            if (enemy->getID() == hero->getID())
+                continue;
+            else
+                _new_try = false;
+        }
 
         this->startDefaultGame(hero, enemy);
     }

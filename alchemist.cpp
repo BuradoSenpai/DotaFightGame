@@ -241,7 +241,7 @@ void Alchemist::skillSelectionMenu(Hero *hero)
                 }
                 break;
             case 5:
-                if ((this->HP() > (int)((this->getMaxHP()-this->HP())/100*90) && this->MP() > (int)((this->getMaxMP()-this->MP())/100*90))
+                if ((this->HP() < (int)((this->getMaxHP()-this->HP())/100*90) && this->MP() < (int)((this->getMaxMP()-this->MP())/100*90))
                         && (this->refreshSkillCd ==0) && (this->unstableConcoctionCd < 4) && (!this->isSilenced()))
                 {
                     this->refreshSkill();

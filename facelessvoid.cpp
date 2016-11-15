@@ -206,7 +206,7 @@ void FacelessVoid::skillSelectionMenu(Hero *hero)
                 }
                 break;
             case 5:
-                if ((this->HP() > (int)((this->getMaxHP()-this->HP())/100*90) && this->MP() >
+                if ((this->HP() < (int)((this->getMaxHP()-this->HP())/100*90) && this->MP() <
                         (int)((this->getMaxMP()-this->MP())/100*90))
                         && (this->refreshSkillCd == 0 ) && (!this->isSilenced()))
                 {
